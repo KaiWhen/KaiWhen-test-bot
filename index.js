@@ -37,7 +37,7 @@ bot.on("message", async message => {
     .setColor("#35ff71")
     .addField("Bot name:", bot.user.username);
 
-    return message.channel.send(botembed);
+    return message.channel.send(botembed, boticon);
   }
 
   if(cmd === `${prefix}saysomething`){
