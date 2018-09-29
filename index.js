@@ -33,11 +33,11 @@ bot.on("message", async message => {
     let boticon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("KaiWhen's bot info")
-    .setIcon(boticon)
+    .setThumbnail(boticon)
     .setColor("#35ff71")
     .addField("Bot name:", bot.user.username);
 
-    return message.channel.send(botembed, boticon);
+    return message.channel.send(botembed);
   }
 
   if(cmd === `${prefix}saysomething`){
