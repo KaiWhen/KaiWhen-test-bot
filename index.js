@@ -28,6 +28,16 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
+  if(cmd === `${prefix}botinfo`){
+
+    let botembed = new Discord.RichEmbed()
+    .setDescription("KaiWhen's bot info")
+    .setColor("#35ff71")
+    .addField("Bot name:", bot.user.username);
+
+    return message.channel.send(botembed);
+  }
+
   if(cmd === `${prefix}saysomething`){
     rnd = Math.floor(Math.random()*6)
     return message.channel.send(sayRnd[rnd]);
