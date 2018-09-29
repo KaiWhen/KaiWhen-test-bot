@@ -35,7 +35,9 @@ bot.on("message", async message => {
     .setDescription("KaiWhen's bot info")
     .setThumbnail(boticon)
     .setColor("#35ff71")
-    .addField("Bot name:", bot.user.username);
+    .addField("Bot name:", bot.user.username)
+    .addField("Created on:", bot.user.createdAt
+    .addField("ur mom sucks")
 
     return message.channel.send(botembed);
   }
