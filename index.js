@@ -30,8 +30,10 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}botinfo`){
 
+    let boticon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setDescription("KaiWhen's bot info")
+    .setIcon(boticon)
     .setColor("#35ff71")
     .addField("Bot name:", bot.user.username);
 
