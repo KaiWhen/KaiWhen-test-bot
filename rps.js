@@ -20,27 +20,26 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
     if(cmd === `${prefix}rps`){
-        message.channel.send("Type rock, paper, or scissors");
+      let embed = new Discord.RichEmbed()
+      .addField("Rock, paper, scissors", "type your choice")
+       message.channel.send(embed);
         rpsact = true;
         rpsrnd = Math.floor(Math.random()*2)
       }
-        if(message.content === 'rock' && rpsrnd === 0 && rpsact === true){
+        if(message.content === 'rock' || message.content === 'Rock' && rpsrnd === 0 && rpsact === true){
           let embed = new Discord.RichEmbed()
-          .setDescription("Rock, paper, scissors")
           .addField("Rock", "It's a draw!")
            message.channel.send(embed);
            rpsact = false;
         }
-        else if(message.content === 'rock' && rpsrnd === 1 && rpsact === true){
+        else if(message.content === 'rock' || message.content === 'Rock' && rpsrnd === 1 && rpsact === true){
           let embed = new Discord.RichEmbed()
-          .setDescription("Rock, paper, scissors")
-          .addField("Paper", "Ha! I win!")
+          .addField("Paper", "You lost!")
            message.channel.send(embed);
           rpsact = false;
         }
-        else if(message.content === 'rock' && rpsrnd === 2 && rpsact === true){
+        else if(message.content === 'rock' || message.content === 'Rock' && rpsrnd === 2 && rpsact === true){
           let embed = new Discord.RichEmbed()
-          .setDescription("Rock, paper, scissors")
           .addField("Scissors", "You win! I lose :(")
            message.channel.send(embed);
           rpsact = false;
