@@ -47,7 +47,7 @@ bot.on("message", async message => {
     .addField("Time", message.createdAt)
     .addField("Reason", reason);
 
-    let reportchannel = message.guild.channels.find(`name`, "reports");
+    let reportchannel = message.guild.channels.find('name', "reports");
     if (!reportchannel) return message.channel.send("Reports channel not found. Please create a reports channel");
 
       reportchannel.send(repEmbed);
