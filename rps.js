@@ -25,18 +25,24 @@ bot.on("message", async message => {
         rpsrnd = Math.floor(Math.random()*2)
       }
         if(message.content === 'rock' && rpsrnd === 0 && rpsact === true){
-           message.channel.send("rock");
-           message.channel.send("It's a draw!");
+          let embed = new Discord.RichEmbed()
+          .setDescription("Rock, paper, scissors")
+          .addField("Rock", "It's a draw!")
+           message.channel.send(embed);
            rpsact = false;
         }
         else if(message.content === 'rock' && rpsrnd === 1 && rpsact === true){
-          message.channel.send("paper");
-          message.channel.send("HA! I win. What a loserrr");
+          let embed = new Discord.RichEmbed()
+          .setDescription("Rock, paper, scissors")
+          .addField("Paper", "Ha! I win!")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'rock' && rpsrnd === 2 && rpsact === true){
-          message.channel.send("scissors");
-          message.channel.send("SHIT FUCK");
+          let embed = new Discord.RichEmbed()
+          .setDescription("Rock, paper, scissors")
+          .addField("Scissors", "You win! I lose :(")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'paper' && rpsrnd === 0 && rpsact === true){
