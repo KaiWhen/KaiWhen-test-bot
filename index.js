@@ -23,7 +23,7 @@ bot.on("ready", async () => {
 });
 
 //command stuff in this thing
-module.exports.run = async (bot, message, args) => {
+bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "gei") return;
 
