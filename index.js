@@ -4,8 +4,9 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 var rnd;
+var rps;
 
-var sayRnd = new Array(5);
+var sayRnd = new Array();
 
 sayRnd[0] = "fuk u";
 sayRnd[1] = "Hello!";
@@ -30,6 +31,25 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
+
+  if(cmd === `${prefix}report`){
+
+    let repUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if (!repUser) return message.channel.send("Could not find user");
+    let reason = args.join(" ").slice(30);
+
+    let repEmbed = new Discord.RichEmbed()
+    .setDescription("Report")
+    .setColor("#ff0000")
+    .addField("Reported User", `${repUser} ID: ${repUser.id}`)
+    .addField("Reported by", `${message.author} ID: ${messgae.author.id}`)
+    .addField("Channel", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", reason);
+
+
+    return;
+    }
 
   //botinfo command
   if(cmd === `${prefix}botinfo`){
