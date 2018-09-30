@@ -51,7 +51,7 @@ bot.on("message", async message => {
 
     if (!reportchannel) return message.channel.send("Reports channel not found. Please create a reports channel");
 
-      reportchannel.send(repEmbed);
+    return reportchannel.send(repEmbed);
 
     return;
     }
