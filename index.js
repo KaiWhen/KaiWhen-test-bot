@@ -36,7 +36,7 @@ bot.on("message", async message => {
 
     let repUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!repUser) return message.channel.send("Could not find user");
-    let reason = args.join(" ").slice(20);
+    let reason = args.join(" ").slice(30);
 
     let repEmbed = new Discord.RichEmbed()
     .setDescription("Report")
@@ -47,12 +47,10 @@ bot.on("message", async message => {
     .addField("Time", message.createdAt)
     .addField("Reason", reason);
 
-    let reportChannel = message.guild.channels.find(`name`, "reports");
-    if (!reportChannel) return message.channel.send("Reports channel not found. Please create a reports channel");
+    let reportchannel = message.guild.channel.find(`name`, "reports");
+    if (!reportchannel) return message.channel.send("Reports channel not found. Please create a reports channel");
 
-
-
-      reportChannel.send(repEmbed);
+      reportchannel.send(repEmbed);
 
     return;
     }
