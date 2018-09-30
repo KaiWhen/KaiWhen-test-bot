@@ -10,15 +10,18 @@ var sayRnd = new Array(5);
 sayRnd[0] = "fuk u";
 sayRnd[1] = "Hello!";
 sayRnd[2] = "u suck";
-sayRnd[3] = "My balls are itchy. wbu?";
+sayRnd[3] = "How are you?";
 sayRnd[4] = "something";
 sayRnd[5] = "YEET";
+sayRnd[6] = "YEET SKEET"
+sayRnd[7] = "Merry Christmas!"
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is on bois`);
   bot.user.setActivity("with ur mom");
 });
 
+//command stuff in this thing
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "gei") return;
@@ -28,6 +31,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
+  //botinfo command
   if(cmd === `${prefix}botinfo`){
 
     let boticon = bot.user.displayAvatarURL;
@@ -43,7 +47,7 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}saysomething`){
-    rnd = Math.floor(Math.random()*6)
+    rnd = Math.floor(Math.random()*8)
     return message.channel.send(sayRnd[rnd]);
 
     }
@@ -52,9 +56,13 @@ bot.on("message", async message => {
       }
 });
 
+//words-that-make-bot-say-something-command
 bot.on('message', msg => {
   if (msg.content === 'gei') {
     msg.channel.send('no u');
+  }
+  if (msg.content === 'im pooping') {
+    msg.channel.send('ew');
   }
 });
 
