@@ -26,19 +26,19 @@ bot.on("message", async message => {
         rpsact = true;
         rpsrnd = Math.floor(Math.random()*2)
       }
-        if(message.content === 'rock' || message.content === 'Rock' && rpsrnd === 0 && rpsact === true){
+        if(message.content === 'rock' && rpsrnd === 0 && rpsact === true){
           let embed = new Discord.RichEmbed()
           .addField("Rock", "It's a draw!")
            message.channel.send(embed);
            rpsact = false;
         }
-        else if(message.content === 'rock' || message.content === 'Rock' && rpsrnd === 1 && rpsact === true){
+        else if(message.content === 'rock' && rpsrnd === 1 && rpsact === true){
           let embed = new Discord.RichEmbed()
           .addField("Paper", "You lost!")
            message.channel.send(embed);
           rpsact = false;
         }
-        else if(message.content === 'rock' || message.content === 'Rock' && rpsrnd === 2 && rpsact === true){
+        else if(message.content === 'rock' && rpsrnd === 2 && rpsact === true){
           let embed = new Discord.RichEmbed()
           .addField("Scissors", "You win! I lose :(")
            message.channel.send(embed);
