@@ -32,4 +32,5 @@ bot.on("message", async message => {
     .addField("You received 69 kaiwhency")
      message.channel.send(moneyEmbed);
 
+}
 });
