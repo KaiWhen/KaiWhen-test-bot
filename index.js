@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
 
+rps = require ("./rps");
+
 var rnd;
 
 var sayRnd = new Array();
