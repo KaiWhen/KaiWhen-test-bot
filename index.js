@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
 
-rps = require ("./rps");
+rps = require ("./rps.js");
 
 var rnd;
 
