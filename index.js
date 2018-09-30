@@ -32,29 +32,6 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  if(cmd === `${prefix}report`){
-
-    let repUser = message.guild.member(message.mentions.members.first() || message.guild.members.get(args[0]));
-    if (!repUser) return message.channel.send("Could not find user");
-    let reason = args.slice(1).join(" ");
-    let reportchannel = message.guild.channels.find(c => c.name === "reports");
-
-    let repEmbed = new Discord.RichEmbed()
-    .setDescription("Report")
-    .setColor("#ff0000")
-    .addField("Reported User", `${repUser} ID: ${repUser.id}`)
-    .addField("Reported by", `${message.author} ID: ${messgae.author.id}`)
-    .addField("Channel", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", reason);
-
-
-    if (!reportchannel) return message.channel.send("Reports channel not found. Please create a reports channel");
-
-    return reportchannel.send(repEmbed);
-
-    return;
-    }
 
   //botinfo command
   if(cmd === `${prefix}botinfo`){
@@ -79,6 +56,40 @@ bot.on("message", async message => {
     if(cmd === `${prefix}fuckyou`){
       return message.channel.send("no fuk u");
       }
+});
+
+bot.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+if(cmd === `${prefix}report`){
+
+  let repUser = message.guild.member(message.mentions.members.first() || message.guild.members.get(args[0]));
+  if (!repUser) return message.channel.send("Could not find user");
+  let reason = args.slice(1).join(" ");
+  let reportchannel = message.guild.channels.find(c => c.name === "reports");
+
+  let repEmbed = new Discord.RichEmbed()
+  .setDescription("Report")
+  .setColor("#ff0000")
+  .addField("Reported User", `${repUser} ID: ${repUser.id}`)
+  .addField("Reported by", `${message.author} ID: ${messgae.author.id}`)
+  .addField("Channel", message.channel)
+  .addField("Time", message.createdAt)
+  .addField("Reason", reason);
+
+
+  if (!reportchannel) return message.channel.send("Reports channel not found. Please create a reports channel");
+
+  reportchannel.send(repEmbed);
+
+  return;
+  }
 });
 
 //words-that-make-bot-say-something-command
