@@ -45,8 +45,14 @@ bot.on("message", async message => {
     .addField("Reported by", `${message.author} ID: ${messgae.author.id}`)
     .addField("Channel", message.channel)
     .addField("Time", message.createdAt)
-    .addField("Reason", reason);
+    .addField("Reason", reason)
 
+    let reportChannel = message.guild.channels.find(`name`, "reports");
+    if (!reportChannel) return message.channel.send("Reports channel not found. Please create a reports channel");
+
+
+    message.delete().catch(O_o=>{});
+    reportChannel.send(repEmbed);
 
     return;
     }
@@ -61,7 +67,7 @@ bot.on("message", async message => {
     .setColor("#35ff71")
     .addField("Bot name:", bot.user.username)
     .addField("Created on:", bot.user.createdAt)
-    .addField("ur mom sucks")
+    .addField("Created by", "KaiWhen#9072")
 
     return message.channel.send(botembed);
   }
