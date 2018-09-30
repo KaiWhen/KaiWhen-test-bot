@@ -34,11 +34,11 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}report`){
 
-    let repUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let repUser = message.guild.member(message.mentions.members.first() || message.guild.members.get(args[0]));
     if (!repUser) return message.channel.send("Could not find user");
-    let reason = args.slice(30).join(" ");
-    let reportchannel = message.guild.channels.find('name', "reports");
-    
+    let reason = args.slice(1).join(" ");
+    let reportchannel = message.guild.channels.find(c => c.name === "reports");
+
     let repEmbed = new Discord.RichEmbed()
     .setDescription("Report")
     .setColor("#ff0000")
