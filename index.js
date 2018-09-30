@@ -23,7 +23,7 @@ bot.on("ready", async () => {
 });
 
 //command stuff in this thing
-bot.on("message", async message => {
+bot.on("message", async message, args => {
   if(message.author.bot) return;
   if(message.channel.type === "gei") return;
 
@@ -47,7 +47,7 @@ bot.on("message", async message => {
     .addField("Time", message.createdAt)
     .addField("Reason", reason);
 
-    let reportchannel = message.guild.channel.find(`name`, "reports");
+    let reportchannel = message.guild.channels.find(`name`, "reports");
     if (!reportchannel) return message.channel.send("Reports channel not found. Please create a reports channel");
 
       reportchannel.send(repEmbed);
