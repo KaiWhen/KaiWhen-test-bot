@@ -5,7 +5,9 @@ var rps;
 var rpsrnd;
 var rpsact = false;
 
-module.exports.run = async (bot, message, args) => {
+bot.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
 
   let prefix = botconfig.prefix;
   let messageArray = message.content.split(" ");
