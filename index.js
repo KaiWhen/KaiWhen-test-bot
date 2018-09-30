@@ -36,7 +36,7 @@ bot.on("message", async message => {
     .setThumbnail(boticon)
     .setColor("#35ff71")
     .addField("Bot name:", bot.user.username)
-    .addField("Created on:", bot.user.createdAt
+    .addField("Created on:", bot.user.createdAt)
     .addField("ur mom sucks")
 
     return message.channel.send(botembed);
