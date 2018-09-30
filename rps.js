@@ -7,7 +7,7 @@ var rpsrnd;
 var rpsact = false;
 
 bot.on("ready", async () => {
-  console.log(`${bot.user.username} lsjkdkfsdbf`);
+  console.log(`rps.js is running`);
 });
 
 bot.on("message", async message => {
