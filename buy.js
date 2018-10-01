@@ -10,7 +10,6 @@ bot.on("ready", async () => {
   console.log('buy.js is running');
 });
 
-let msg = message.content.toUpperCase();
 
 bot.on("message", async message => {
   if(message.author.bot) return;
@@ -20,6 +19,7 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
+  let msg = message.content.toUpperCase();
 
     
     if(msg.startsWith(`${prefix}BUY`)){
