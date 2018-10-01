@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require ("fs");
 let userData = JSON.parse(fs.readFileSync('userData.json', 'utf8'));
+let items = JSON.parse(fs.readFileSync('items.json', 'utf8'));
 const moment = require ("moment");
 
 bot.on("ready", async () => {
