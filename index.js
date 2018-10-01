@@ -21,7 +21,7 @@ sayRnd[7] = "Merry Christmas!"
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is on bois`);
-  bot.user.setActivity("with ur mom");
+  bot.user.setActivity("with idk");
 });
 
 //command stuff in this thing
