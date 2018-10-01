@@ -109,7 +109,7 @@ if(cmd === `${prefix}shop`){
 
         }
     }
-        const itemEmbed = new Discord.RichEmbed()
+        let itemEmbed = new Discord.RichEmbed()
         .setDescription("Items")
 
         for(i = 0; i < categories.length; i++){
@@ -124,11 +124,11 @@ if(cmd === `${prefix}shop`){
                 }
             }
 
-            itemEmbed.addField(categories[i], iDesc);
+            itemEmbed.addField(categories[i], iDesc)
 
         }
 
-        return message.channel.send({itemEmbed});
+        return message.channel.send(itemEmbed);
 
 }
 
