@@ -51,7 +51,7 @@ bot.on("message", async message => {
 
   }
 
-  if(msg.startsWith(`${prefix}BUY`)){
+  if(cmd === `${prefix}buy`)){
 
     let categories = [];
 
@@ -98,7 +98,7 @@ return;
 
 }
 
-if(msg.startsWith(`${prefix}SHOP`)){
+if(cmd === `${prefix}shop`)){
 
     let categories = [];
 
