@@ -31,6 +31,7 @@ bot.on("message", async message => {
     let moneyEmbed = new Discord.RichEmbed()
     .addField("Balance", userData[message.author.id + message.guild.id].money + " kaiwhency")
      message.channel.send(moneyEmbed);
+   }
 
      if(cmd === `${prefix}daily`){
        if(userData[message.author.id + message.guild.id].prevDaily != moment().format('L')){
