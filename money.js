@@ -21,7 +21,9 @@ bot.on("message", async message => {
   if(!userData[message.author.id + message.guild.id]) userData[message.author.id + message.guild.id] = {}
   if(!userData[message.author.id + message.guild.id].money) userData[message.author.id + message.guild.id].money = 500;
 
-  fs.writeFile("./userData.json", JSON.stringify(userData, null, 2), (err) => {if (err) console.error(err);})
+  fs.writeFile("./userData.json", JSON.stringify(userData), (err) => {
+    if (err) console.error(err);
+  })
 
   if(cmd === `${prefix}money`){
     let moneyEmbed = new Discord.RichEmbed()
