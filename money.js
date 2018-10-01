@@ -25,7 +25,7 @@ bot.on("message", async message => {
 
   fs.writeFile("./userData.json", JSON.stringify(userData), (err) => {
     if (err) console.error(err);
-  })
+  });
 
   if(cmd === `${prefix}money`){
     let moneyEmbed = new Discord.RichEmbed()
