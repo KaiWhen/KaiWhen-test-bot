@@ -82,9 +82,9 @@ bot.on("message", async message => {
                 }
 
                 itemEmbed.addField(categories[i], iDesc);
-                
+
             }
-            
+
             message.channel.send({itemEmbed});
 
     }
@@ -93,38 +93,38 @@ bot.on("message", async message => {
     let itemPrice = 0;
     let itemDesc = '';
 
-    for (var i in items) { 
-        if (args.join(" ").trim().toUpperCase() === items[i].name.toUpperCase()) { 
+    for (var i in items) {
+        if (args.join(" ").trim().toUpperCase() === items[i].name.toUpperCase()) {
             itemName = items[i].name;
             itemPrice = items[i].price;
             itemDesc = items[i].desc;
         }
     }
 
-    if (itemName === '') {
-        return message.channel.send(`**Item ${args.join(" ").trim()} not found.**`);
+    if (!itemName) {
+        return message.channel.send('**Item not found.**');
     }
 
-        if (userData[message.author.id + message.guild.id].money <= itemPrice) { 
+        if (userData[message.author.id + message.guild.id].money <= itemPrice) {
 
             return message.channel.send(`**You don't have enough money for this item.**`);
         }
 
-        if (userData[message.author.id + message.guild.id].money >= itemPrice) { 
+        if (userData[message.author.id + message.guild.id].money >= itemPrice) {
 
             message.channel.send('**You bought ' + itemName + '!**');
             userData[message.author.id + message.guild.id].money -= itemPrice;
 
         }
 
-            
+
             if (itemName === 'Test Command') {
-                message.guild.members.get(message.author.id).addRole(message.guild.roles.find("name", "dont mind me")); 
+                message.guild.members.get(message.author.id).addRole(message.guild.roles.find("name", "dont mind me"));
             }
 
-        
 
-    
+
+
 
 }
 
