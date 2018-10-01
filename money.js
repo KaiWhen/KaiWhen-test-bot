@@ -57,37 +57,7 @@ bot.on("message", async message => {
 
 
 
-    if(!args.join(" ")){
 
-        for(var i in items){
-
-            if(!categories.includes(items[i].type)){
-                categories.push(items[i].type)
-
-            }
-        }
-            const itemEmbed = new Discord.RichEmbed()
-            .setDescription("Items")
-
-            for(i = 0; i < categories.length; i++){
-
-                var iDesc = '';
-
-                for(var c in items){
-
-                    if(categories[i] === items[c].type){
-
-                        iDesc += `${items[c].name} | ${items[c].price} | ${items[c].desc}\n`;
-                    }
-                }
-
-                itemEmbed.addField(categories[i], iDesc);
-
-            }
-
-            return message.channel.send({itemEmbed});
-
-    }
 
     let itemName = '';
     let itemPrice = 0;
@@ -128,7 +98,38 @@ return;
 
 }
 
+if(msg.startsWith(`${prefix}SHOP`)){
 
+
+    for(var i in items){
+
+        if(!categories.includes(items[i].type)){
+            categories.push(items[i].type)
+
+        }
+    }
+        const itemEmbed = new Discord.RichEmbed()
+        .setDescription("Items")
+
+        for(i = 0; i < categories.length; i++){
+
+            var iDesc = '';
+
+            for(var c in items){
+
+                if(categories[i] === items[c].type){
+
+                    iDesc += `${items[c].name} | ${items[c].price} | ${items[c].desc}\n`;
+                }
+            }
+
+            itemEmbed.addField(categories[i], iDesc);
+
+        }
+
+        return message.channel.send({itemEmbed});
+
+}
 
 });
 
