@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const rps = require ("./rps.js");
 const money = require ("./money.js");
+const buy = require ("./buy.js");
+const items = require("./items.json");
 const fs = require ("fs");
 let userData = JSON.parse(fs.readFileSync('./userData.json', 'utf8'));
 
