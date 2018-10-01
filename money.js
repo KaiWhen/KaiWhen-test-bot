@@ -23,7 +23,7 @@ bot.on("message", async message => {
 
   fs.writeFile("./userData.json", JSON.stringify(userData, null, 2), (err) => {if (err) console.error(err);})
 
-  if(cmd === `${prefix}MONEY`){
+  if(cmd === `${prefix}money`){
     let moneyEmbed = new Discord.RichEmbed()
     .addField("Balance", userData[message.author.id + message.guild.id].money)
      message.channel.send(moneyEmbed);
