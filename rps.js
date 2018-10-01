@@ -45,33 +45,39 @@ bot.on("message", async message => {
           rpsact = false;
         }
         else if(message.content === 'paper' && rpsrnd === 0 && rpsact === true){
-          message.channel.send("rock");
-          message.channel.send("SHIT FUCK");
+          let embed = new Discord.RichEmbed()
+          .addField("Rock", "You win! I lose :(")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'paper' && rpsrnd === 1 && rpsact === true){
-          message.channel.send("paper");
-          message.channel.send("It's a draw!");
+          let embed = new Discord.RichEmbed()
+          .addField("Paper", "It's a draw!")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'paper' && rpsrnd === 2 && rpsact === true){
-          message.channel.send("scissors");
-          message.channel.send("HA! I win. What a loserrr");
+          let embed = new Discord.RichEmbed()
+          .addField("Scissors", "You lost!")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'scissors' && rpsrnd === 0 && rpsact === true){
-          message.channel.send("rock");
-          message.channel.send("HA! I win. What a loserrr");
+          let embed = new Discord.RichEmbed()
+          .addField("Rock", "You lost!")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'scissors' && rpsrnd === 1 && rpsact === true){
-          message.channel.send("paper");
-          message.channel.send("SHIT FUCK");
+          let embed = new Discord.RichEmbed()
+          .addField("Paper", "You win! I lose :(")
+           message.channel.send(embed);
           rpsact = false;
         }
         else if(message.content === 'scissors' && rpsrnd === 2 && rpsact === true){
-          message.channel.send("scissors");
-          message.channel.send("It's a draw!");
+          let embed = new Discord.RichEmbed()
+          .addField("Scissors", "It's a draw!")
+           message.channel.send(embed);
           rpsact = false;
         }
         return;
