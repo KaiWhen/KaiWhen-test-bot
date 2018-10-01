@@ -25,7 +25,7 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}MONEY`){
     let moneyEmbed = new Discord.RichEmbed()
-    .addField("Balance", userData[message.author.id + member.guild.id].money)
+    .addField("Balance", userData[message.author.id + message.guild.id].money)
      message.channel.send(moneyEmbed);
 
   }
