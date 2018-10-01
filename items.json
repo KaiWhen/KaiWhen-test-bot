@@ -1,0 +1,9 @@
+{
+    "test": {
+        "name": "Test Command",
+        "type": "Command",
+        "price": "1",
+        "desc": "Lets you use this dope test command"
+
+    }
+}

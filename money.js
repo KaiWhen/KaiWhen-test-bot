@@ -2,7 +2,7 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require ("fs");
-let userData = JSON.parse(fs.readFileSync('./userData.json', 'utf8'));
+let userData = JSON.parse(fs.readFileSync('userData.json', 'utf8'));
 const moment = require ("moment");
 
 bot.on("ready", async () => {
@@ -23,7 +23,7 @@ bot.on("message", async message => {
   if(!userData[message.author.id + message.guild.id].money) userData[message.author.id + message.guild.id].money = 500;
   if(!userData[message.author.id + message.guild.id].prevDaily) userData[message.author.id + message.guild.id].prevDaily = "Not Collected";
 
-  fs.writeFile("./userData.json", JSON.stringify(userData), (err) => {
+  fs.writeFile("userData.json", JSON.stringify(userData), (err) => {
     if (err) console.error(err);
   });
 
