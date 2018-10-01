@@ -24,9 +24,7 @@ bot.on("message", async message => {
   if(!userData[message.author.id + message.guild.id].money) userData[message.author.id + message.guild.id].money = 500;
   if(!userData[message.author.id + message.guild.id].prevDaily) userData[message.author.id + message.guild.id].prevDaily = "Not Collected";
 
-  fs.writeFile("userData.json", JSON.stringify(userData), (err) => {
-    if (err) console.error(err);
-  });
+
 
   if(cmd === `${prefix}money`){
     let moneyEmbed = new Discord.RichEmbed()
@@ -131,6 +129,10 @@ if(cmd === `${prefix}shop`){
         return message.channel.send(itemEmbed);
 
 }
+
+fs.writeFile("userData.json", JSON.stringify(userData), (err) => {
+  if (err) console.error(err);
+});
 
 });
 
