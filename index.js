@@ -2,9 +2,8 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const rps = require ("./rps.js");
-const moneyy = require ("./money.js");
+const money = require ("./money.js");
 const fs = require ("fs");
-let money = require("./money.json");
 
 var rnd;
 
@@ -34,11 +33,6 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  if(!money[message.author.id]){
-    money[message.author.id] = {
-      money: 0
-    };
-  }
 
 
   //botinfo command
