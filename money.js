@@ -102,7 +102,7 @@ bot.on("message", async message => {
     }
 
     if (!itemName) {
-        message.channel.send('**Item not found.**');
+      return message.channel.send('**Item not found.**');
     }
 
         if (userData[message.author.id + message.guild.id].money <= itemPrice) {
@@ -123,7 +123,7 @@ bot.on("message", async message => {
             }
 
 
-
+return;
 
 
 }
