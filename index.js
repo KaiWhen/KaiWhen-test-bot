@@ -4,6 +4,7 @@ const bot = new Discord.Client({disableEveryone: true});
 const rps = require ("./rps.js");
 const money = require ("./money.js");
 const fs = require ("fs");
+let userData = JSON.parse(fs.readFileSync('./userData.json', 'utf8'));
 
 var rnd;
 

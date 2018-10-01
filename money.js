@@ -18,14 +18,14 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
 
-  if(!userData[author.id + member.guild.id]) userData[author.id + message.guild.id] = {}
-  if(!userData[author.id + member.guild.id].money) userData[author.id + message.guild.id].money = 500;
+  if(!userData[message.author.id + member.guild.id]) userData[message.author.id + message.guild.id] = {}
+  if(!userData[message.author.id + member.guild.id].money) userData[message.author.id + message.guild.id].money = 500;
 
   fs.writeFile("./userData.json", JSON.stringify(userData, null, 2), (err) => {if (err) console.error(err);})
 
-  if(cmd === `${prefix}MONEY` || cmd === `${prefix}BALANCE`){
+  if(cmd === `${prefix}MONEY`){
     let moneyEmbed = new Discord.RichEmbed()
-    .addField("Balance", userData[author.id + member.guild.id].money)
+    .addField("Balance", userData[message.author.id + member.guild.id].money)
      message.channel.send(moneyEmbed);
 
   }
