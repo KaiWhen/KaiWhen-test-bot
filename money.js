@@ -100,6 +100,7 @@ return;
 
 if(msg.startsWith(`${prefix}SHOP`)){
 
+    let categories = [];
 
     for(var i in items){
 
