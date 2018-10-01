@@ -24,7 +24,7 @@ bot.on("message", async message => {
       .addField("Rock, paper, scissors", "type your choice")
        message.channel.send(embed);
         rpsact = true;
-        rpsrnd = Math.floor(Math.random()*2)
+        rpsrnd = Math.floor(Math.random()*3)
       }
         if(message.content === 'rock' && rpsrnd === 0 && rpsact === true){
           let embed = new Discord.RichEmbed()
