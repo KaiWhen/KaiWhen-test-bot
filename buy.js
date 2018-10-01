@@ -37,7 +37,7 @@ bot.on("message", async message => {
 
                 }
             }
-                const itemEmbed = new Discord.richEmbed()
+                const itemEmbed = new Discord.RichEmbed()
                 .setDescription("Items")
 
                 for(i = 0; i < categories.length; i++){
