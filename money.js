@@ -85,7 +85,7 @@ bot.on("message", async message => {
 
             }
 
-            message.channel.send({itemEmbed});
+            return message.channel.send({itemEmbed});
 
     }
 
@@ -119,7 +119,7 @@ bot.on("message", async message => {
 
 
             if (itemName === 'Test Command') {
-                message.guild.members.get(message.author.id).addRole(message.guild.roles.find("name", "dont mind me"));
+                message.guild.members.get(message.author.id).addRole(message.guild.roles.find("name", "test"));
             }
 
 
