@@ -51,7 +51,7 @@ bot.on("message", async message => {
 
   }
 
-  if(cmd === `${prefix}buy`)){
+  if(cmd === `${prefix}buy`){
 
     let categories = [];
 
@@ -98,7 +98,7 @@ return;
 
 }
 
-if(cmd === `${prefix}shop`)){
+if(cmd === `${prefix}shop`){
 
     let categories = [];
 
