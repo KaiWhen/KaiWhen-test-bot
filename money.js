@@ -18,8 +18,8 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
 
-  if(!userData[message.author.id + member.guild.id]) userData[message.author.id + message.guild.id] = {}
-  if(!userData[message.author.id + member.guild.id].money) userData[message.author.id + message.guild.id].money = 500;
+  if(!userData[message.author.id + message.guild.id]) userData[message.author.id + message.guild.id] = {}
+  if(!userData[message.author.id + message.guild.id].money) userData[message.author.id + message.guild.id].money = 500;
 
   fs.writeFile("./userData.json", JSON.stringify(userData, null, 2), (err) => {if (err) console.error(err);})
 
