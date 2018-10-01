@@ -37,7 +37,7 @@ bot.on("message", async message => {
 
                 }
             }
-                let itemEmbed = new Discord.richEmbed()
+                const itemEmbed = new Discord.richEmbed()
                 .setDescription("Items")
 
                 for(i = 0; i < categories.length; i++){
@@ -56,7 +56,7 @@ bot.on("message", async message => {
                     
                 }
                 
-                message.channel.send(itemEmbed);
+                message.channel.send({itemEmbed});
 
         }
 
