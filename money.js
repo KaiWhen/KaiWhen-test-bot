@@ -118,7 +118,7 @@ if(cmd === `${prefix}shop`){
 
                 if(categories[i] === items[c].type){
 
-                    iDesc += `${items[c].name} | ${items[c].price} | ${items[c].desc}\n`;
+                    iDesc += `${items[c].name} | ${items[c].price} kaiwhency | ${items[c].desc}\n`;
                 }
             }
 
